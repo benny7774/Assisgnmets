@@ -28,6 +28,8 @@ This is the solution which is solved as team.Then mentor gives three step soluti
 	* List all possible squares
 	* Start from Ascending or Descending
 
+Then Mentor taught sudoku how we solve the sudoku which one is solved in the white board by the mentor and my teammate Anoop taught to rest of our teamamte.
+
 Then Mentor gives sliding puzzle which is consists of 1 to 8 and consists of 9 boxes and i solve the problem with 12 steps. Then mentor ask me to explain how i solve the problem? i explained to him suddenly i noted i forgot to write a step and i go back to note that which i skiped. Then mentor taught us train stragery which is
 
 	* Identify the train
