@@ -1,0 +1,49 @@
+GNOME
+GNOME is GNU network Object Model Environment ( GNU id ga, No unix). It is the GUI for the CentOS Graphical Desktop Application
+
+Kernel
+Kernel is core component of an OS. The Core interface between computer's hardware and software process.
+
+Types of kernel
+	* Micro Kernel is to implement OS by the Hardware
+	* Monolithic kernel is Device drivers which is used interface the hardware to the Operating System
+	* Hybrid Kernel is implement both Micro Kernel and Monolithic Kernel
+	* Exokernel is the OS Kernel
+	* NanoKernel is opensource, free and light weight uses
+
+Why People use different linux disturbtion in server
+	*All the technical are required for management and applications to build Operating System
+
+why people use different linux disturbtion in personal
+	* It is Basic, light weight
+
+OSI Model 
+
+	OSI layer is Open system Interface Connection Model. It is a concept framework. It used to describe the functions of a networking. To guide Technology Vendors and Developers.
+OSI Model is consists of 7 layers
+	* Apllication
+	* Presentation
+	* Session
+	* Transport
+	* Network
+	* Datalink
+	* Physical
+Apllication is end users which are Human Computer
+Presentation is syntax layers which are Usable format
+Session is Synchronise and send to port which are maintain connections
+Transport is end to end connections which are protocols including TCP and IP
+Network is packets which is packets which is physical path like cables
+Datalink is frames which are format of data
+Physical is a structure which are raw bit stream and physical medium
+
+Commands are used in CentOS
+ls - list
+ln - command to know what files are in the directory you are in.
+cd - command directory
+cp - copy
+sudo - super user do
+vi - vim
+mkdir - Make Directory
+touch - to create 
+cd.. - previous folder
+ls.. current directory
