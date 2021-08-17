@@ -8,6 +8,6 @@
 	
 	* I learned about the languages which is used for to understanding computer languages.
 
-	* In languages i learned about sentences which are in letters interchaged in every word, sentences are didn't have the spaces between of each word and another sentences using
+	* In languages i learned about sentences which are in letters interchaged in every word, sentences are didn't have the spaces between of each word and another sentences using special characters.
 
-	* Then about the languages of south india how it formed why we use support symbol in the language and other reasons for the 
+	* Then languages of south india how it formed why we use support special characters in the language.
