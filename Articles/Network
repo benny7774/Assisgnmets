@@ -1,0 +1,219 @@
+# Network Traffic Analysis
+
+	Network Traffic Analysis (NTA) can be described as the act of examining network traffic to characterize common ports and protocols utilized, establish a baseline for our environment, monitor and respond to threats, and ensure the greatest possible insight into our organization's network.
+
+	* Collecting real-time traffic within the network to analyze upcoming threats.
+
+	* Setting a baseline for day-to-day network communications.
+	
+	* Identifying and analyzing traffic from non-standard ports, suspicious hosts, and issues with networking protocols such as HTTP errors, problems with TCP, or other networking misconfigurations.
+
+	* Detecting malware on the wire, such as ransomware, exploits, and non-standard interactions.
+
+Common Traffic Analysis Tools
+	
+	Tool			Description
+	
+	tcpdump			tcpdump is a command-line utility that, with the aid of LibPcap, captures and interprets network traffic from a network interface or capture file.
+	
+	Tshark			TShark is a network packet analyzer much like TCPDump. It will capture packets from a live network or read and decode from a file. It is the command-line variant of Wireshark.
+	
+	Wireshark		Wireshark is a graphical network traffic analyzer. It captures and decodes frames off the wire and allows for an in-depth look into the environment.
+
+	NGrep			NGrep is a pattern-matching tool built to serve a similar function as grep for Linux distributions.
+	
+	tcpick			tcpick is a command-line packet sniffer that specializes in tracking and reassembling TCP streams.
+
+	Network Taps		Taps (Gigamon, Niagra-taps) are devices capable of taking copies of network traffic and sending them to another place for analysis.
+
+	Networking Span Ports	Span Ports are a way to copy frames from layer two or three networking devices during egress or ingress processing and send them to a collection point.
+
+	Elastic Stack		The Elastic Stack is a culmination of tools that can take data from many sources, ingest the data, and visualize it, to enable searching and analysis of it.
+
+	SIEMS			SIEMS (such as Splunk) are a central point in which data is analyzed and visualized. Alerting, forensic analysis, and day-to-day checks against the traffic are all use cases for a				   SIEM.
+
+TCP vs. UDP
+
+	Let us take a second to examine these two protocols side by side.
+
+TCP VS. UDP
+
+	Characteristic						TCP										UDP
+	
+	Transmission					Connection-oriented							Connectionless. Fire and forget.
+	
+	Connection Establishment		TCP uses a three-way handshake to ensure that a connection is established.	UDP does not ensure the destination is listening.
+
+	Data Delivery				Stream-based conversations							packet by packet, the source does not care if the destination is active
+
+	Receipt of data				Sequence and Acknowledgement numbers are utilized to account for data.		UDP does not care.
+
+	Speed					TCP has more overhead and is slower because of its built-in functions.		UDP is fast but unreliable.
+
+The Analysis Process
+
+	Network Traffic Analysis is a dynamic process that can change depending on the tools we have on hand, permissions given to us by the organization, and our network's visibility. Our goal is to provide a repeatable process we can begin to utilize when performing traffic analysis.
+
+Analysis in Practice
+
+	The previous section defined network traffic analysis, the dependencies for performing traffic analysis, and its importance. This section will break down a workflow for performing traffic analysis, and we will become familiar with the key components.
+
+Tcpdump Fundamentals
+
+	Tcpdump is a command-line packet sniffer that can directly capture and interpret data frames from a file or network interface. It was built for use on any Unix-like operating system and had a Windows twin called WinDump. It is a potent and straightforward tool used on most Unix-based systems.
+
+		Switch Command								Result
+
+			D					Will display any interfaces available to capture from.
+
+			i					Selects an interface to capture from. ex. -i eth0
+			
+			n					Do not resolve hostnames.
+			
+			nn					Do not resolve hostnames or well-known ports.
+			
+			e					Will grab the ethernet header along with upper-layer data.
+			
+			X					Show Contents of packets in hex and ASCII.
+			
+			XX					Same as X, but will also specify ethernet headers. (like using Xe)
+			
+			v, vv, vvv				Increase the verbosity of output shown and saved.
+			
+			c					Grab a specific number of packets, then quit the program.
+			
+			s					Defines how much of a packet to grab.
+
+			S					change relative sequence numbers in the capture display to absolute sequence numbers. (13248765839 instead of 101)
+			
+			q					Print less protocol information.
+
+			r file.pcap				Read from a file.
+
+			w file.pcap				Write into a file
+
+Fundamentals Lab
+
+	The purpose of this lab is to expose us to tcpdump and give us time to familiarize ourselves with the terminal and utilizing tools within it. We will practice various tcpdump basics such as reading from and writing to files, utilizing basic switches, and locating files in the terminal. While completing these labs, we can explore and practice using different switches and functionality within tcpdump. When comfortable, take some time and try to determine if we can make out any traffic visible to us on the network.
+
+Tcpdump Packet Filtering
+
+	Tcpdump provides a robust and efficient way to parse the data included in our captures via packet filters. This section will examine those filters and get a glimpse at how it modifies the output from our capture.
+
+Helpful TCPDump Filters
+		Filter				Result
+		
+		host			host will filter visible traffic to show anything involving the designated host. Bi-directional
+		
+		src / dest		src and dest are modifiers. We can use them to designate a source or destination host or port.
+		
+		net			net will show us any traffic sourcing from or destined to the network designated. It uses / notation.
+
+		proto			will filter for a specific protocol type. (ether, TCP, UDP, and ICMP as examples)
+
+		port			port is bi-directional. It will show any traffic with the specified port as the source or destination.
+
+		portrange		portrange allows us to specify a range of ports. (0-1024)
+
+		less / greater "< >"	less and greater can be used to look for a packet or protocol option of a specific size.
+
+		and / &&		and && can be used to concatenate two different filters together. for example, src host AND port.
+
+		or			or allows for a match on either of two conditions. It does not have to meet both. It can be tricky.
+
+		not			not is a modifier saying anything but x. For example, not UDP.
+
+Interrogating Network Traffic With Capture and Display Filters
+
+	This lab aims to provide some exposure to interrogating network traffic and give everyone some valuable practice implementing packet filters. We will be utilizing filters like host, port, protocol, and more to change our view while digging through a .PCAP file.
+
+Analysis with Wireshark
+
+	Wireshark is a free and open-source network traffic analyzer much like tcpdump but with a graphical interface. Wireshark is multi-platform and capable of capturing live data off many different interface types (to include WiFi, USB, and Bluetooth) and saving the traffic to several different formats. Wireshark allows the user to dive much deeper into the inspection of network packets than other tools. What makes Wireshark truly powerful is the analysis capability it provides, giving a detailed insight into the traffic.
+
+Features and Capabilities:
+
+	Deep packet inspection for hundreds of different protocols
+
+	Graphical and TTY interfaces
+
+	Capable of running on most Operating systems
+
+	Ethernet, IEEE 802.11, PPP/HDLC, ATM, Bluetooth, USB, Token Ring, Frame Relay, FDDI, among others
+
+	Decryption capabilities for IPsec, ISAKMP, Kerberos, SNMPv3, SSL/TLS, WEP, and WPA/WPA2
+
+Requirements for Use
+
+	Windows:
+		
+		The Universal C Runtime. This is included with Windows 10 and Windows Server 2019 and is installed automatically on earlier versions if Microsoft Windows Update is enabled. Otherwise, KB2999226 or KB3118401 must be installed.
+
+		Any modern 64-bit AMD64/x86-64 or 32-bit x86 processor.
+
+		500 MB available RAM. Larger capture files require more RAM.
+
+		500 MB available disk space. Capture files require additional disk space.
+
+		Any modern display. 1280 × 1024 or higher resolution is recommended. Wireshark will make use of HiDPI or Retina resolutions if available. Power users will find multiple monitors useful.
+
+		A supported network card for capturing:
+
+		Ethernet. Any card supported by Windows should work.
+
+		802.11. See the Wireshark wiki page. Capturing raw 802.11 information may be difficult without special equipment.
+
+
+Linux:
+
+		Wireshark runs on most UNIX and UNIX-like platforms, including Linux and most BSD variants. The system requirements should be comparable to the specifications listed above for Windows.
+
+		Binary packages are available for most Unices and Linux distributions
+
+		
+Basic TShark Switches
+
+			Switch Command				Result
+
+				D			Will display any interfaces available to capture from and then exit out.
+
+				L			Will list the Link-layer mediums you can capture from and then exit out. (ethernet as an example)
+
+				i			choose an interface to capture from. (-i eth0)
+
+				f			packet filter in libpcap syntax. Used during capture.
+
+				c			Grab a specific number of packets, then quit the program. Defines a stop condition.
+
+				a			Defines an autostop condition. Can be after a duration, specific file size, or after a certain number of packets.
+
+				r (pcap-file)		Read from a file.
+
+				W (pcap-file)		Write into a file using the pcapng format.
+
+				P			Will print the packet summary while writing into a file (-W)
+
+				x			will add Hex and ASCII output into the capture.
+
+				h			See the help menu
+
+Familiarity With Wireshark
+
+	This lab aims to give Wireshark a basic familiarity and utilize its graphical interface to perform traffic captures. We will spend time using capture and display filters and getting used to the different outputs shown by the tool.
+
+Wireshark Advanced Usage
+	
+	In this section, we will cover some advanced usage with Wireshark. The project developers have included many different capabilities ranging from tracking TCP conversations to cracking wireless credentials. The inclusion of many different plugins makes Wireshark one of the best traffic analysis tools.
+
+Packet Inception, Dissecting Network Traffic With Wireshark
+
+	The purpose of this lab is to provide experience with dissecting traffic in Wireshark. We will have the chance to pull objects out of previously captured network traffic along with pulling data from live traffic.
+
+Guided Lab: Traffic Analysis Workflow
+
+	One of our fellow admins noticed a weird connection from Bob's host IP = 172.16.10.90 when analyzing the baseline captures we have been gathering. He asked us to check it out and see what we think is happening.
+
+Decrypting RDP connections
+
+	The purpose of this lab is to give a taste of the power Wireshark has. In this lab, we will be working with RDP traffic. If one has the required key utilized between the two hosts for encrypting the traffic, Wireshark can deobfuscate the traffic for us.
+
