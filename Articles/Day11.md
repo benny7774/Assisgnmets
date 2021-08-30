@@ -2,7 +2,9 @@
 
 ## Linux Fundamentals
 
-	Today, i start to learn about the hack by the guideness of my mentor. He shows me "hack the box.com" to know the linux fudamentals. 
+	Today, i start to learn about the hack the box by the guideness of my mentor. He shows me "hack the box.com" to know the linux fudamentals.
+
+	In linux i learned about components of linux, File hierarchy, shell, prompt description, getting help, system information, user management, Package management, Services and process management, Working with web service, Navigation, Working with Files and Directories, Editing Files, Find Files and Directories, File Descriptors and Redirections and Shortcuts these are the main system which is used for operating linux by the terminal command and each subject have many terminal commands.
 
 ## Languages
 	

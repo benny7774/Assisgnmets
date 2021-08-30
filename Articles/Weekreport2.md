@@ -6,11 +6,11 @@
 
 # Day7
 
-	I learned about solving problems using algorithm which the computer didn't about the mathematical thinking.
+	I learned about solving problems using algorithm which the computer didn't about the mathematical thinking. The solving algorithm by steps list out all function and find the loop to solve the problem by the mathematical thinking.
 
 # Day8
 
-	I am trying to solve the problems by the algorithms
+	I am trying to solve the problems by the algorithms with my team and we got the solution to find out the algorithm for the problem. The steps we are created by the possible way for the solution in the problem.
 
 # Day9
 
@@ -18,4 +18,4 @@
 
 # Day10
 
-	I trying to solve the problems with my own knowledge and i understand about the company process which are done by each team.
+	I trying to solve the problems with my own knowledge by creating the possible way to solve the problem and list out all ways and In demo meet i understand about the company process which are done by each team and how the solve the errors and bugs by testing the application with the help of testers.

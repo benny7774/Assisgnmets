@@ -1,6 +1,8 @@
 # Weekly Report3
 
 ## Day11
+	
+	* Today, i start to learn about the hack by the guideness of my mentor. He shows me "hack the box.com" to know the linux fudamentals.
 
 	* I learned about the languages which is used for to understanding computer languages.
 
