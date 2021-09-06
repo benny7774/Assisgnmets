@@ -25,3 +25,19 @@
 		* In Self-authority - Conflicts are a part of relationships
 
 		* In Self-transforming - Accept for who they are.
+
+	Then mentor talks about the stages of psychology development
+
+		* Serving people around you.
+
+		* Integrating Create group with people 
+
+		* Self actualising find your sense of purpose values
+
+		* Individualting adult hood
+
+		* Differentiating
+
+		* conforming
+
+		* Surviving
